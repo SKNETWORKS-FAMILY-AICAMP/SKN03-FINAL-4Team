@@ -1,8 +1,8 @@
 import torch
 import openai
 import os
-from config import OPENAI_API_KEY, EMBEDDING_CACHE_FILE
-from utils.similarity_utils import calculate_similarity
+from nejot.config import OPENAI_API_KEY, EMBEDDING_CACHE_FILE
+from nejot.utils.similarity_utils import calculate_similarity
 
 openai.api_key = OPENAI_API_KEY
 device = "cpu"

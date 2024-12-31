@@ -1,5 +1,5 @@
-from chains.embedding_chain import get_openai_embedding
-from utils.similarity_utils import calculate_similarity
+from nejot.chains.embedding_chain import get_openai_embedding
+from nejot.utils.similarity_utils import calculate_similarity
 
 def search_with_cached_embeddings(embedding_cache, spec, all_data, similarity_threshold=0.95):
     if not embedding_cache:

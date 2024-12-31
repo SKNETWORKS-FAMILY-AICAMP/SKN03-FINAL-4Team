@@ -1,5 +1,5 @@
 import pymysql
-from config import DB_CONFIG
+from nejot.config import DB_CONFIG
 
 def fetch_all_from_db(db_config):
     connection = pymysql.connect(**db_config)

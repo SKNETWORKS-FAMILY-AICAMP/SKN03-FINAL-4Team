@@ -1,4 +1,5 @@
 import os
+import sys
 import pymysql
 import base64
 import openai
@@ -8,13 +9,22 @@ from dotenv import load_dotenv
 from streamlit_tags import st_tags
 from streamlit_modal import Modal
 
-from config import DB_CONFIG
-from graphs.blog_generation_graph import blog_generation_workflow
-from utils.ai_utils import get_ai_suggested_titles
+# 현재 파일(LLMcore/openai_chatbot/pages/main.py) 위치 기준으로 4단계 위로 이동
+#  pages/ -> openai_chatbot/ -> LLMcore/ -> SKN03-FINAL-4TEAM/
+BASE_DIR = os.path.abspath(
+    os.path.join(os.path.dirname(__file__), "..", "..", "..")
+)
+sys.path.append(BASE_DIR)
+
+from nejot.config import DB_CONFIG
+from nejot.graphs.blog_generation_graph import blog_generation_workflow
+from nejot.utils.ai_utils import get_ai_suggested_titles
 
 import requests
 
 # BACKEND_URL = "https://backdocsend.jamesmoon.click/blog/add"
+
+
 
 # .env 파일 로드
 load_dotenv()

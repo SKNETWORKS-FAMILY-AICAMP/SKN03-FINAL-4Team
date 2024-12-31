@@ -1,17 +1,17 @@
-from utils.db_utils import fetch_all_from_db, insert_or_update_spec_info
-from utils.google_utils import google_search
-from utils.hate_speech_utils import init_hate_speech_pipeline, detect_hate_speech
-from chains.embedding_chain import load_cached_embeddings, update_embedding_cache
-from chains.retrieval_chain import search_with_cached_embeddings
-from chains.outline_chain import create_outline_with_additional_info
-from chains.content_chain import generate_blog_content
+from nejot.utils.db_utils import fetch_all_from_db, insert_or_update_spec_info
+from nejot.utils.google_utils import google_search
+from nejot.utils.hate_speech_utils import init_hate_speech_pipeline, detect_hate_speech
+from nejot.chains.embedding_chain import load_cached_embeddings, update_embedding_cache
+from nejot.chains.retrieval_chain import search_with_cached_embeddings
+from nejot.chains.outline_chain import create_outline_with_additional_info
+from nejot.chains.content_chain import generate_blog_content
 from langchain.document_loaders import UnstructuredURLLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain.vectorstores import FAISS
 from langchain.embeddings import OpenAIEmbeddings
 from langchain.chains import RetrievalQA
 from langchain.llms import OpenAI as LangchainOpenAI
-from config import DB_CONFIG, OPENAI_API_KEY, GOOGLE_API_KEY, GOOGLE_CSE_ID
+from nejot.config import DB_CONFIG, OPENAI_API_KEY, GOOGLE_API_KEY, GOOGLE_CSE_ID
 
 def blog_generation_workflow(product_name, product_specs_list, blog_title, keywords):
     all_data = fetch_all_from_db(DB_CONFIG)
