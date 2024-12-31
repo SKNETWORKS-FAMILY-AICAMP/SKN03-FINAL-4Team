@@ -1,0 +1,5 @@
+pip install langchain langchain-experimental langchain-openai langchain_community langchain-huggingface unstructured
+pip install pymysql google-api-python-client google-auth-httplib2 google-auth-oauthlib langchain nest_asyncio numpy openai==0.28 torch
+pip install -U langchain-huggingface faiss-cpu
+pip install "unstructured[all-docs]"
+pip install streamlit streamlit-tags streamlit_quill streamlit-modal

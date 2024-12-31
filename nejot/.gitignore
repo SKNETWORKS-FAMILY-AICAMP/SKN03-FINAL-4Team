@@ -1,0 +1,28 @@
+**/.env
+*/.env
+.env
+
+__pycache__/
+*/__pycache__/
+**/__pycache__/
+
+.venv/
+test/
+
+# 1. .env 파일 무시
+.env
+
+# 2. 가상환경 폴더(.venv) 무시
+.venv/
+
+# 3. __pycache__ 폴더 무시
+__pycache__/
+**/__pycache__/
+
+# 4. test 폴더 무시
+test/
+
+# (추가) 일반적으로 Python 관련 캐시/임시파일 무시
+*.py[cod]
+*.pyo
+*.pyd
